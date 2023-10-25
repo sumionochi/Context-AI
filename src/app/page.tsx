@@ -11,21 +11,9 @@ import React from 'react'
 import Tools from '@/components/Tools';
 import TypewriterTitle3 from '@/components/ui/TypewriterTitle3';
 
-type Props = {
-  user: User
-}
-
-const page = async({user}: Props) => {
-  const session = await getAuthSession();
-  if(!session?.user){
-    return redirect("/display");
-  }
-  else{
-    return (
-      <h1 className='text-center'>/display</h1>
-    )
-  }
-}
+const page = async() => {return (
+  <h1 className='text-center'>/display</h1>
+)}
 
 export default page
 
