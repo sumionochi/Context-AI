@@ -25,7 +25,7 @@ const Sign2 = (props: Props) => {
 
   return (
     <Button variant="ghost" onClick={handleSignIn} className='text-white hover:bg-blue-800 hover:text-white mt-6 rounded-lg text-2xl px-6 py-6 bg-blue-600'>
-        Sign In
+        Sign In For Free
     </Button>
   );
 };
