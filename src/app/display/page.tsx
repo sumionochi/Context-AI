@@ -14,10 +14,10 @@ import Sign from '@/components/Sign';
 import Sign2 from '@/components/Sign2';
 
 type Props = {
-  user: User
-}
+  user: User | undefined; // Define the user property with the appropriate type
+};
 
-const display = async({user}: Props) => {
+const Display = async({user}: Props) => {
   const session = await getAuthSession();
   if(session?.user){
     return redirect("/home");
@@ -79,5 +79,5 @@ const display = async({user}: Props) => {
   }
 }
 
-export default display
+export default Display
 
