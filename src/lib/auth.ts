@@ -46,7 +46,12 @@ export const authOptions: NextAuthOptions = {
                 session.user.credits = token.credits;
             }
             return session;
-        }
+        },
+        redirect: async ({ url, baseUrl }: { url: string; baseUrl: string }) => {
+            const redirectUrl = '/home';
+            return redirectUrl;
+        },
+          
         
     },
     secret: process.env.NEXTAUTH_SECRET as string,
@@ -57,6 +62,7 @@ export const authOptions: NextAuthOptions = {
                 clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
             }),
         ],
+        
 };
 
 export const getAuthSession = () => {

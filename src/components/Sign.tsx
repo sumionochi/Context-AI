@@ -18,6 +18,7 @@ const Sign = (props: Props) => {
     if (result?.error) {
       console.error('Sign-in error:', result.error);
     } else {
+      console.log("signin sucess")
       // Redirect to the '/home' page upon successful sign-in
       router.push('/home');
     }
