@@ -79,7 +79,7 @@ const Home = async({}) => {
             </div>
           </div>
 
-          <div className="text-white h-[250px] flex justify-center hover:bg-slate-800/90 items-center text-center rounded-md border-2 border-dashed bg-slate-800 text-2xl md:text-4xl font-semibold p-4 bg-gray ">
+          <div className="text-white h-[250px] flex justify-center hover:bg-slate-800/90 items-center text-center rounded-md border-2 border-dashed border-white bg-slate-800 text-2xl md:text-4xl font-semibold p-4 bg-gray ">
             More Assistants Coming Soon
           </div>
         </div>

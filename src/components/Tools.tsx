@@ -19,7 +19,7 @@ const Tools = async ({ user }: Props) => {
       {session?.user ? (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="fixed text-white bg-black hover:bg-white/20 hover:text-white bottom-6 right-6 w-16 h-16 rounded-full"><StickyNote /></Button>
+            <Button className="fixed text-white bg-black hover:bg-black/50 hover:text-white bottom-6 right-6 w-16 h-16 rounded-full"><StickyNote /></Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56">
             <DropdownMenuLabel>AI Assistants</DropdownMenuLabel>
