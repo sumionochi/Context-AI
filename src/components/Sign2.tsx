@@ -4,6 +4,7 @@ import React from 'react';
 import { Button } from './ui/button';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation'; // Import the useRouter hook
+import { ArrowRight } from 'lucide-react';
 
 type Props = {};
 
@@ -24,8 +25,8 @@ const Sign2 = (props: Props) => {
   };
 
   return (
-    <Button variant="ghost" onClick={handleSignIn} className='text-white hover:bg-blue-800 hover:text-white mt-6 rounded-lg text-2xl px-6 py-6 bg-blue-600'>
-        Sign In For Free
+    <Button className='font-semibold text-xl px-4 py-6 bg-gradient-to-r from-blue-400 to-teal-500' onClick={handleSignIn}> 
+      Let's Start <ArrowRight className='w-6 h-6 ml-2'/>
     </Button>
   );
 };
