@@ -148,7 +148,8 @@ const ClientForm = ({isPro}: Props) => {
                     </div>
                     <Separator className='flex-[1]'/>
                     <Button disabled={isPending} type='submit' className='w-full mt-3 mb-1 flex justify-center items-center' size='lg'>
-                        {isPending ? <Loader2 className="animate-spin text-white"/> : <p className='font-semibold text-xl'>Let's Go</p>}
+                        {isPending && <Loader2 className="w-4 h-4 mr-2 animate-spin"/>}
+                        <p className='font-semibold text-xl'>Let's Go</p>
                     </Button>
                     
                 </div>
