@@ -19,7 +19,7 @@ const Chat = (props: Props) => {
                 <Separator/>
                 <div className='flex flex-col h-80 px-4 py-3'>
                   message
-                  <ChatInput className='px-4'/>
+                  <ChatInput className='px-0'/>
                 </div>
               </AccordionContent>
             </div>
