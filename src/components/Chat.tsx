@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './
 import ChatHeader from './ChatHeader'
 import ChatInput from './ChatInput'
 import { Separator } from './ui/separator'
-
+import ChatMessages from './ChatMessages'
 type Props = {}
 
 const Chat = (props: Props) => {
@@ -16,9 +16,8 @@ const Chat = (props: Props) => {
                 <ChatHeader/>
               </AccordionTrigger>
               <AccordionContent>
-                <Separator/>
                 <div className='flex flex-col h-80 px-4 py-3'>
-                  message
+                  <ChatMessages className='flex-1'/>
                   <ChatInput className='px-0'/>
                 </div>
               </AccordionContent>

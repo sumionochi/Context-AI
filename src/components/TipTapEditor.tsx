@@ -22,7 +22,7 @@ const TipTapEditor = ({ note }: Props) => {
   });
   const saveNote = useMutation({
     mutationFn: async () => {
-      const response = await axios.post("/api/saveNote", {
+      const response = await axios.post("/api/saveNotes", {
         noteId: note.id,
         editorState,
       });
@@ -51,7 +51,6 @@ const TipTapEditor = ({ note }: Props) => {
     },
   });
   const lastCompletion = React.useRef("");
-
   React.useEffect(() => {
     if (!completion || !editor) return;
     const diff = completion.slice(lastCompletion.current.length);
@@ -59,9 +58,10 @@ const TipTapEditor = ({ note }: Props) => {
     editor.commands.insertContent(diff);
   }, [completion, editor]);
 
-  const debouncedEditorState = useDebounce(editorState, 500);
+  const debouncedEditorState = useDebounce(editorState, 1000);
   React.useEffect(() => {
     // save to db
+    console.log(debouncedEditorState);
     if (debouncedEditorState === "") return;
     saveNote.mutate(undefined, {
       onSuccess: (data) => {
