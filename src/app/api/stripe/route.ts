@@ -4,6 +4,7 @@ import { stripe } from "@/lib/stripe";
 import { NextResponse } from "next/server";
 
 const settingUrl = process.env.NEXTAUTH_URL + '/settings'
+export const dynamic = 'force-dynamic';
 
 export async function  GET() {
     try{
