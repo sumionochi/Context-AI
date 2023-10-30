@@ -25,7 +25,7 @@ const Sign2 = (props: Props) => {
   };
 
   return (
-    <Button className='font-semibold text-xl px-4 py-6 bg-gradient-to-r from-blue-400 to-teal-500' onClick={handleSignIn}> 
+    <Button className='text-white font-semibold text-xl px-4 py-6 bg-gradient-to-r from-blue-400 to-teal-500' onClick={handleSignIn}> 
       Let's Start <ArrowRight className='w-6 h-6 ml-2'/>
     </Button>
   );

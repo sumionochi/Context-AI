@@ -84,8 +84,8 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
   })
 
   return (
-    <div {...props} className={cn('border-t border-zinc-300', className)}>
-      <div className='relative mt-4 flex-1 overflow-hidden rounded-lg border-none outline-none'>
+    <div {...props} className={cn('', className)}>
+      <div className='relative mt-2 flex-1 overflow-hidden rounded-lg border-none outline-none'>
         <TextareaAutosize
           ref={textareaRef}
           onKeyDown={(e) => {
@@ -107,12 +107,12 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           autoFocus
           disabled={isPending}
           onChange={(e) => setInput(e.target.value)}
-          placeholder='Write a message...'
-          className='peer disabled:opacity-50 pr-14 resize-none block w-full border-0 bg-zinc-100 py-1.5 text-gray-900 focus:ring-0 text-sm sm:leading-6'
+          placeholder='Why do stars twinkle...'
+          className='peer mr-2 disabled:opacity-50 pr-14 resize-none block w-full border-0 bg-secondary py-1.5 focus:ring-0 text-sm sm:leading-6'
         />
 
-        <div className='absolute inset-y-0 right-0 flex py-1.5 pr-1.5'>
-          <kbd className='inline-flex items-center rounded border bg-white border-gray-200 px-1 font-sans text-xs text-gray-400'>
+        <div className='absolute inset-y-0 right-0 flex py-0 pr-0'>
+          <kbd className='inline-flex items-center rounded bg-secondary px-1 font-sans text-xs text-gray-400'>
             {isPending ? (
               <Loader2 className='w-3 h-3 animate-spin' />
             ) : (
@@ -120,12 +120,9 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
             )}
           </kbd>
         </div>
-
-        <div
-          className='absolute inset-x-0 bottom-0 border-t border-gray-300 peer-focus:border-t-2 peer-focus:border-indigo-600'
-          aria-hidden='true'
-        />
+        <div className='absolute inset-x-0 bottom-0 border-t border-gray-300 peer-focus:border-t-2 peer-focus:border-yellow-500' aria-hidden='true'/>
       </div>
+      
     </div>
   )
 }

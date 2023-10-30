@@ -16,9 +16,9 @@ const gallery = async (props: Props) => {
     },
   });
   const session = await getAuthSession();
-  {if(!session?.user){redirect('/display')}}
+  {if(!session?.user){redirect('/home')}}
   return (
-    <div className="py-8 mx-auto max-w-7xl">
+    <div className="py-8 min-h-screen mx-auto max-w-7xl">
       <div className="grid place-items-start grid-cols-1 gap-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {session?.user && courses.map((course) => (
             <GalleryCourseCard course={course} key={course.id} />

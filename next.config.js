@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['lh3.googleusercontent.com', 's3.us-west-2.amazonaws.com', "firebasestorage.googleapis.com","oaidalleapiprodscus.blob.core.windows.net"],
+        domains: ['lh3.googleusercontent.com','www.medicalnewstoday.com','aarambhindia.org','i.ibb.co','pixabay.com','s3.us-west-2.amazonaws.com', "firebasestorage.googleapis.com","oaidalleapiprodscus.blob.core.windows.net"],
     },
     typescript: {
         ignoreBuildErrors: true,

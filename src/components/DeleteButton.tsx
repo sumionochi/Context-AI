@@ -39,6 +39,7 @@ const DeleteButton = ({ noteId }: Props) => {
           },
         });
       }}
+      className="bg-gradient-to-r from-rose-500 to-yellow-500"
     >
       <Trash />
     </Button>

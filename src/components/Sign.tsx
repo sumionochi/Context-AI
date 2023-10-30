@@ -25,7 +25,7 @@ const Sign = (props: Props) => {
   };
 
   return (
-    <Button variant="ghost" onClick={handleSignIn} className="text-white bg-gradient-to-br from-blue-400 to-teal-400">
+    <Button variant="ghost" onClick={handleSignIn} className="text-white hover:text-white bg-gradient-to-br from-blue-400 to-teal-400">
       Sign In
     </Button>
   );

@@ -23,15 +23,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
-        
+      <script src="https://www.youtube.com/iframe_api"></script>
       </head>
-      <body className={cn(lexend.className, 'antialiased min-h-screen pt-16', 'scrollbar scrollbar-thumb scrollbar-thumb-white dark:scrollbar-thumb-black dark:scrollbar-track-white scrollbar-track-slate-700')}>
+      <body className={cn(lexend.className, 'antialiased min-h-screen pt-16 border-none outline-none', 'scrollbar scrollbar-thumb scrollbar-thumb-white dark:scrollbar-thumb-black dark:scrollbar-track-white scrollbar-track-slate-700')}>
             <Provider>
               <Navbar/>
               {children}
               <Toaster/>
               <Tools user={undefined}/> 
-              <Chat/>
+              <Chat user={undefined}/>
             </Provider>
       </body>
     </html>

@@ -21,7 +21,7 @@ const Dashboard = async (props: Props) => {
     .where(eq($notes.userId, session?.user.id!));
   return (
     <>
-      <div className='antialiased min-h-screen bg-gradient-to-r from-rose-100 to-teal-100 flex pb-24'>
+      <div className='antialiased min-h-screen bg-secondary flex pb-24'>
         <div className="max-w-7xl mx-auto p-10">
             <div className="flex items-center p-4 mt-4 gap-4 mb-4">
               <Link href="/home">
@@ -30,7 +30,7 @@ const Dashboard = async (props: Props) => {
                   Back
                 </Button>
               </Link>
-              <h1 className="text-3xl font-bold text-gray-900">My Notes</h1>
+              <h1 className="text-3xl font-bold text-primary">My Notes</h1>
 
             </div>
             <Separator />

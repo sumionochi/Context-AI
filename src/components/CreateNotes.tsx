@@ -80,7 +80,7 @@ const CreateNotes = (props: Props) => {
             </Button>
             <Button
               type="submit"
-              className="bg-green-600"
+              className="bg-gradient-to-r from-blue-500 to-teal-500"
               disabled={createNotebook.isPending}
             >
               {createNotebook.isPending && <Loader2 className='w-4 h-4 mr-2 animate-spin'/>}  
