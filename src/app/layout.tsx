@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils'
 import Navbar from '@/components/Navbar'
 import { Provider} from '@/components/Provider'
 import { Toaster } from '@/components/ui/toaster'
-import Tools from '@/components/Tools'
 import Chat from '@/components/Chat'
 
 const lexend = Lexend({ subsets: ['latin'] })
@@ -25,12 +24,11 @@ export default function RootLayout({
       <head>
       <script src="https://www.youtube.com/iframe_api"></script>
       </head>
-      <body className={cn(lexend.className, 'antialiased min-h-screen pt-16 border-none outline-none', 'scrollbar scrollbar-thumb scrollbar-thumb-white dark:scrollbar-thumb-black dark:scrollbar-track-white scrollbar-track-slate-700')}>
+      <body className={cn(lexend.className, 'antialiased  min-h-screen border-none outline-none', 'scrollbar scrollbar-thumb scrollbar-thumb-white scrollbar-track-slate-700 bg-gradient-to-br from-rose-400 to-orange-300 dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900 dark:to-violet-600')}>
             <Provider>
               <Navbar/>
               {children}
               <Toaster/>
-              <Tools user={undefined}/> 
               <Chat user={undefined}/>
             </Provider>
       </body>

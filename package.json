@@ -10,6 +10,13 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.25.7",
+    "@fullcalendar/core": "^6.1.8",
+    "@fullcalendar/daygrid": "^6.1.8",
+    "@fullcalendar/interaction": "^6.1.8",
+    "@fullcalendar/react": "^6.1.8",
+    "@fullcalendar/timegrid": "^6.1.8",
+    "@headlessui/react": "^1.7.16",
+    "@heroicons/react": "^2.0.18",
     "@hookform/resolvers": "^3.3.2",
     "@neondatabase/serverless": "^0.6.0",
     "@next-auth/prisma-adapter": "^1.0.7",
@@ -79,14 +86,7 @@
     "url": "^0.11.0",
     "web-vitals": "^2.1.2",
     "web3": "^1.6.1",
-    "youtube-transcript": "^1.0.6",
-    "@fullcalendar/core": "^6.1.8",
-    "@fullcalendar/daygrid": "^6.1.8",
-    "@fullcalendar/interaction": "^6.1.8",
-    "@fullcalendar/react": "^6.1.8",
-    "@fullcalendar/timegrid": "^6.1.8",
-    "@headlessui/react": "^1.7.16",
-    "@heroicons/react": "^2.0.18"
+    "youtube-transcript": "^1.0.6"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",

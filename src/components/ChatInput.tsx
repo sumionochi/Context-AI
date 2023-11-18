@@ -107,7 +107,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           autoFocus
           disabled={isPending}
           onChange={(e) => setInput(e.target.value)}
-          placeholder='Why do stars twinkle...'
+          placeholder='Yeah, about that code i wrote...'
           className='peer mr-2 disabled:opacity-50 pr-14 resize-none block w-full border-0 bg-secondary py-1.5 focus:ring-0 text-sm sm:leading-6'
         />
 

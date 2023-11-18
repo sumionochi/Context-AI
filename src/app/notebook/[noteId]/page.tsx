@@ -19,21 +19,21 @@ type Props = {
 const NotebookPage = async ({ params: { noteId } }: Props) => {
   const session = await getAuthSession();
   if (!session) {
-    return redirect("/dashboard");
+    return redirect("/");
   }
   const notes = await db.select().from($notes).where(and(eq($notes.id, parseInt(noteId)), eq($notes.userId, session.user.id)));
 
   if (notes.length != 1) {
-    return redirect("/dashboard");
+    return redirect("/home");
   }
   const note = notes[0];
 
   return (
-    <div className="min-h-screen grainy p-8">
+    <div className="min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
         <div className="border shadow-xl border-stone-200 rounded-lg p-4 flex items-center">
-          <Link href="/dashboard">
-            <Button className="bg-gradient-to-r text-md from-blue-300 to-teal-300" size="sm">
+          <Link href="/home">
+            <Button className='rounded-md bg-black hover:bg-black flex flex-row justify-center items-center text-sm text-white outline outline-2 outline-white/30' size="sm">
               Back
             </Button>
           </Link>
@@ -42,14 +42,14 @@ const NotebookPage = async ({ params: { noteId } }: Props) => {
             {session.user.name}
           </span>
           <span className="inline-block mx-1">/</span>
-          <span className="text-stone-500 font-semibold">{note.name}</span>
+          <span className="text-primary font-semibold">{note.name}</span>
           <div className="ml-auto">
             <DeleteButton noteId={note.id} />
           </div>
         </div>
 
         <div className="h-4"></div>
-        <div className="border-stone-200 shadow-xl border rounded-lg px-16 py-8 w-full">
+        <div className="border-stone-200 bg-white/20 dark:bg-white/50 shadow-xl border rounded-lg px-4 sm:px-8 py-4 sm:py-8 w-full">
           <TipTapEditor note={note} />
         </div>
       </div>

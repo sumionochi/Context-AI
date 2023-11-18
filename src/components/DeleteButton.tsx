@@ -27,19 +27,19 @@ const DeleteButton = ({ noteId }: Props) => {
       disabled={deleteNote.isPending}
       onClick={() => {
         const confirm = window.confirm(
-          "Are you sure you want to delete this note?"
+          "Are you sure you want to delete this document?"
         );
         if (!confirm) return;
         deleteNote.mutate(undefined, {
           onSuccess: () => {
-            router.push("/dashboard");
+            router.push("/home");
           },
           onError: (err) => {
             console.error(err);
           },
         });
       }}
-      className="bg-gradient-to-r from-rose-500 to-yellow-500"
+      className='rounded-md bg-black hover:bg-black flex flex-row justify-center items-center text-sm text-white outline outline-2 outline-white/30'
     >
       <Trash />
     </Button>

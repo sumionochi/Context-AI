@@ -53,18 +53,18 @@ const CreateNotes = (props: Props) => {
   return (
     <Dialog>
         <DialogTrigger>
-        <div className="border-dashed border-2 flex border-green-600 h-full rounded-lg items-center justify-center sm:flex-col hover:shadow-xl transition hover:-translate-y-1 flex-row p-4">
-          <Plus className="w-6 h-6 text-green-600 mr-2" strokeWidth={3} />
-          <h2 className="font-semibold text-green-600 sm:mt-2">
+        <div className='rounded-3xl p-4 h-full flex flex-col bg-black/50 hover:bg-black/20 hover:text-white gap-4 justify-center items-center text-sm text-white outline outline-2 outline-white/30'>
+          <Plus className="w-6 h-6 text-white mr-2" strokeWidth={3} />
+          <h2 className="f">
             New Note Book
           </h2>
         </div>
         </DialogTrigger>
         <DialogContent>
         <DialogHeader>
-          <DialogTitle>New Note Book</DialogTitle>
+          <DialogTitle>New Document</DialogTitle>
           <DialogDescription>
-            You can create a new note by clicking the button below.
+            Let's give a name to your Document in Workspace. 
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
@@ -75,12 +75,12 @@ const CreateNotes = (props: Props) => {
           />
           <div className="h-4"></div>
           <div className="flex items-center gap-2">
-            <Button type="reset" variant={"secondary"}>
+            <Button type="reset" variant={"outline"} className='bg-black/10'>
               Cancel
             </Button>
             <Button
               type="submit"
-              className="bg-gradient-to-r from-blue-500 to-teal-500"
+              className='rounded-md bg-black hover:bg-black h-10 flex flex-row justify-center items-center text-sm text-white outline outline-2 outline-white/30'
               disabled={createNotebook.isPending}
             >
               {createNotebook.isPending && <Loader2 className='w-4 h-4 mr-2 animate-spin'/>}  

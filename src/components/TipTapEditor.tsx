@@ -74,7 +74,7 @@ const TipTapEditor = ({ note }: Props) => {
   }, [debouncedEditorState]);
   return (
     <>
-      <div className="flex">
+      <div className="flex gap-2 flex-wrap">
         {editor && <TipTapMenuBar editor={editor} />}
         <Button disabled variant={"outline"}>
           {saveNote.isPending ? "Saving..." : "Saved"}
@@ -85,9 +85,9 @@ const TipTapEditor = ({ note }: Props) => {
         <EditorContent editor={editor} />
       </div>
       <div className="h-4"></div>
-      <span className="text-sm">
-        Tip: Press{" "}
-        <kbd className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">
+      <span className="text-sm flex justify-center items-center">
+        Press{" "}
+        <kbd className="px-2 py-2 mx-2 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">
           Shift + A
         </kbd>{" "}
         for AI autocomplete
