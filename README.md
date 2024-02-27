@@ -27,3 +27,13 @@ It streamlines content creation through intelligent note-taking assistance and f
 1. Homeschooling and remote learning tool
 2. For seamless developer experience
 3. For IT professionals notes arrangment
+
+**Challenges**
+Challenge 1: Implementation of Smart Notes Taker Editor
+Implementing an editor for the Smart Notes taker presented challenges, particularly in maintaining text format and customizing font sizes. We solved this issue by using TipTapEditor functions, which allowed for editable text while preserving formatting.
+
+Challenge 2: Server Hosting Expenses
+The expenses associated with server hosting posed a concern, especially when server timeout issues occurred during free-tier deployments due to resource-intensive content generation processes. Our solution involved investing in a $20 hosting plan to ensure the proper functioning of AI content generation. We explored alternative solutions like Edge runtime, but compatibility issues and lack of support with certain services prompted us to opt for hosting.
+
+Challenge 3: DALL·E Image Expiration
+DALL·E provided only a 1-hour public link for generated images, which posed a limitation. We addressed this by storing the generated images in Google Firebase storage, ensuring their availability beyond the 1-hour window.
