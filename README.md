@@ -7,6 +7,8 @@ The problem I am tackling is that it overcomes the barrier of traditional e-lear
 My solution gives a more seamless, streamlined and engaging educational experience for students. 
 Ex - Assignment generation, Question and answering, Code generation + debugging + summary.
 
+![Screenshot from 2023-11-19 21-14-17](https://github.com/sumionochi/Context-AI/assets/89721628/0baff1a6-ba34-4bd3-9676-e75cfc3e9c76)
+
 **Why should I care**
 It streamlines content creation through intelligent note-taking assistance and facilitates dynamic, responsive interaction. 
 
@@ -14,6 +16,8 @@ It streamlines content creation through intelligent note-taking assistance and f
 1. Collaboration with AI
 2. Simplicity
 3. Yet Robustness
+   
+![Screenshot from 2023-11-18 08-48-00](https://github.com/sumionochi/Context-AI/assets/89721628/91c7b64b-923c-482e-9981-858230c4be2e)
 
 **Tech Stack**
 - 🔧 Used NextJS 13 with the app directory structure for the project.
@@ -22,6 +26,8 @@ It streamlines content creation through intelligent note-taking assistance and f
 - 🚀 Employed the Versa Edge runtime for longer and faster AI function execution.
 - 🛢️ Implemented DrizzleORM, a TypeScript object-relational mapper (ORM), for SQL database interaction.
 - ☁️ Utilized Neon DB as a serverless PostgreSQL database and Firebase Storage for file storage.
+
+![Screenshot from 2023-11-18 08-58-44](https://github.com/sumionochi/Context-AI/assets/89721628/37a31bc6-dca0-448c-b21c-99c759ab3032)
 
 **Best usecases**
 1. Homeschooling and remote learning tool
