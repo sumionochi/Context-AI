@@ -29,7 +29,6 @@ export default function RootLayout({
               <Navbar/>
               {children}
               <Toaster/>
-              <Chat user={undefined}/>
             </Provider>
       </body>
     </html>
