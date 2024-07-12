@@ -3,42 +3,41 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
-  url          = env("DATABASE_URL")
-  relationMode = "prisma"
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
 model Account {
-  id                String  @id @default(cuid())
-  userId            String
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id])
 
   @@unique([provider, providerAccountId])
   @@index([userId], name: "userId")
 }
 
 model Session {
-  id           String   @id @default(cuid())
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
   sessionToken String   @unique
-  userId       String
+  userId       String   @db.ObjectId
   expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User     @relation(fields: [userId], references: [id])
 
   @@index([userId], name: "userId")
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
   name          String?
   email         String?   @unique
   emailVerified DateTime?
@@ -49,18 +48,16 @@ model User {
   sessions Session[]
 }
 
-//course contain many units
 model Course {
-  id    String @id @default(cuid())
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
   name  String
   image String
   units Unit[]
 }
 
-//unit contains many chapters
 model Unit {
-  id       String @id @default(cuid())
-  courseId String
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  courseId String @db.ObjectId
 
   name     String
   course   Course    @relation(fields: [courseId], references: [id])
@@ -69,39 +66,37 @@ model Unit {
   @@index([courseId], name: "courseId")
 }
 
-//Chapters
 model Chapter {
-  id     String @id @default(cuid())
-  unitId String
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  unitId String @db.ObjectId
 
   name               String
   youtubeSearchQuery String
-  videoId            String? //? is for incoming api data
-  summary            String?    @db.VarChar(3000)
+  videoId            String?
+  summary            String?
   unit               Unit       @relation(fields: [unitId], references: [id])
   questions          Question[]
 
   @@index([unitId], name: "unitId")
 }
 
-//Questions in course
 model Question {
-  id        String @id @default(cuid())
-  chapterId String
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  chapterId String @db.ObjectId
 
-  question String  @db.VarChar(3000)
-  answer   String  @db.VarChar(3000)
-  options  String  @db.VarChar(3000)
+  question String
+  answer   String
+  options  String
   chapter  Chapter @relation(fields: [chapterId], references: [id])
 
   @@index([chapterId], name: "chapterId")
 }
 
 model UserSubscription {
-  id                     String    @id @default(cuid())
-  userId                 String    @unique
-  stripeCustomerId       String    @unique @map(name: "stripe_customer_id")
-  stripeSubId            String?   @unique @map(name: "stripe_sub_id")
-  stripePriceId          String?   @map(name: "stripe_price_id")
-  stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
+  id                     String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId                 String    @unique @db.ObjectId
+  stripeCustomerId       String    @unique
+  stripeSubId            String?   @unique
+  stripePriceId          String?
+  stripeCurrentPeriodEnd DateTime?
 }
